@@ -1,0 +1,135 @@
+@import "variables.less";
+
+body {
+  background-color: @back-color;
+  overflow: auto;
+}
+
+.sticky-header {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
+.search-area {
+  padding: 10px 65px;
+  background-color: @sec-back-color;
+  border-bottom: 2px solid @border-color;
+}
+
+.view {
+  margin: 10px 50px 10px 50px;
+
+  .spinner {
+    text-align: center;
+  }
+
+  .collapse-links {
+    float: right;
+    font-size: @results-font-size;
+
+    button {
+      outline: none;
+    }
+  }
+
+  .link {
+    color: @link-color;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+    vertical-align: baseline;
+  }
+
+  .delimiter {
+    color: @border-color;
+    margin: 0 7px;
+  }
+
+  .results {
+    .panel-default {
+      font-size: @results-font-size;
+
+      .panel-heading {
+        background-color: @sec-back-color;
+
+        .panel-title {
+          font-size: @results-font-size;
+          border: 1px solid @sec-back-color;
+
+          &:hover {
+            @selection();
+          }
+
+          .accordion-toggle {
+            outline: none;
+            text-decoration: none;
+          }
+
+          .subheading {
+            padding-left: 32px;
+            line-height: 14px;
+          }
+        }
+      }
+
+      .panel-body {
+        padding: 10px 0 10px 45px;
+
+        .details-table {
+          width: 100%;
+
+          tr {
+            border: 1px solid @sec-back-color;
+
+            &:hover {
+              @selection();
+              margin-top: -1px;
+              margin-bottom: -1px;
+
+              td {
+                border-top: 1px solid @border-color;
+                border-bottom: 1px solid @border-color;
+              }
+            }
+
+            &.disabled {
+              color: @sec-color;
+            }
+
+            td {
+              padding-right: 5px;
+
+              &.opn-td { width: 150px; }
+              &.state-td { width: 27px; }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.icon-text {
+  white-space: nowrap;
+}
+
+.icon {
+  margin: 0 2px;
+  max-height: 16px;
+}
+
+a {
+  color: @link-color
+}
+
+td.icon-td {
+  width: 22px;
+}
+
+.alert > button {
+  min-width: initial;
+}

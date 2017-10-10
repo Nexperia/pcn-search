@@ -1,0 +1,47 @@
+{
+  "name": "pcn-search",
+  "version": "0.1.0",
+  "description": "Nexperia PCN search application",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nexperia/pcn-search.git"
+  },
+  "license": "CC-BY-4.0",
+  "devDependencies": {
+    "bower": "~1.8.0",
+    "browserify": "~14.4.0",
+    "browserify-ngannotate": "~2.0.0",
+    "browserify-resolutions": "~1.1.0",
+    "del": "~3.0.0",
+    "gulp": "~3.9.1",
+    "gulp-cachebust": "~0.0.6",
+    "gulp-clean-css": "~3.7.0",
+    "gulp-concat": "~2.6.1",
+    "gulp-if": "~2.0.2",
+    "gulp-install": "~1.1.0",
+    "gulp-jshint": "~2.0.4",
+    "gulp-less": "~3.3.2",
+    "gulp-load-plugins": "~1.5.0",
+    "gulp-ng-config": "~1.4.0",
+    "gulp-ng-html2js": "~0.2.2",
+    "gulp-sourcemaps": "~2.6.0",
+    "gulp-uglify": "~2.1.2",
+    "gulp-util": "~3.0.8",
+    "gulp-webserver": "~0.9.1",
+    "jasmine-core": "~2.7.0",
+    "jshint": "~2.9.5",
+    "vinyl-buffer": "~1.0.0",
+    "vinyl-source-stream": "~1.1.0",
+    "yargs": "~8.0.2"
+  },
+  "dependencies": {
+    "angular": "~1.6.5",
+    "angular-ui-bootstrap": "~2.5.0",
+    "angular-ui-router": "~0.4.2",
+    "jsonld": "~0.4.12"
+  },
+  "scripts": {
+    "prestart": "yarn install",
+    "start": "gulp dev"
+  }
+}

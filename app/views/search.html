@@ -1,0 +1,25 @@
+<div>
+  <sticky-header>
+    <div class="row search-area">
+      <div class="col-sm-12">
+        <form ng-submit="$ctrl.search()">
+          <input type="text" ng-model="$ctrl.searchParams.query" placeholder="Start typing to search for PCN codes"
+                 uib-typeahead="pcnId for pcnId in $ctrl.getSuggestions($viewValue)"
+                 typeahead-min-length="2" typeahead-focus-first="false" class="form-control">
+        </form>
+      </div>
+    </div>
+  </sticky-header>
+
+  <div class="row view">
+    <div uib-alert ng-show="$ctrl.error" class="alert-danger" close="$ctrl.clearError()">{{$ctrl.error}}</div>
+
+    <div class="col-sm-12 spinner" ng-show="!$ctrl.isLoaded.results">
+      <img src="images/loading-spinner.gif"/>
+    </div>
+
+    <div class="col-sm-12" ng-show="$ctrl.isLoaded.results && $ctrl.results.length">
+      <results-area results="$ctrl.results"></results-area>
+    </div>
+  </div>
+</div>

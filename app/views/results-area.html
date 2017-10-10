@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-sm-12">
+    <span>{{ $ctrl.results.length }} results</span>
+    <span class="collapse-links">
+      <button ng-click="$ctrl.expandAll()" class="link" tabindex="-1">Expand all</button>
+      <span class="delimiter">|</span>
+      <button ng-click="$ctrl.collapseAll()" class="link" tabindex="-1">Collapse all</button>
+    </span>
+  </div>
+</div>
+
+<div class="results">
+  <uib-accordion close-others="false">
+    <div uib-accordion-group
+        class="panel-default"
+        ng-repeat="pcn in $ctrl.results"
+        is-open="$ctrl.open[pcn.noticeCode]">
+      <uib-accordion-heading>
+        <div ng-click="$ctrl.searchOPNs(pcn.noticeCode)">
+          <i class="pull-left glyphicon" ng-class="{'glyphicon-triangle-bottom': $ctrl.open[pcn.noticeCode], 'glyphicon-triangle-right': !$ctrl.open[pcn.noticeCode]}"></i>
+          {{ pcn.noticeCode }}
+          <div class="subheading">
+            <span>{{pcn.noticeTitle}}</span>
+            <span class="delimiter">|</span>
+            <span>{{pcn.noticeIssueDate}}</span>
+            <span class="delimiter">|</span>
+            <span>{{pcn.noticeDate}}</span>
+          </div>
+        </div>
+      </uib-accordion-heading>
+      <spinner show="!$ctrl.isLoaded[pcn.noticeCode]"></spinner>
+      <table class="details-table">
+        <tbody>
+          <tr ng-repeat="pcn in $ctrl.pcnOPNs[pcn.noticeCode]" tabindex="1">
+            <td class="opn-td">
+              {{pcn.OPN}}
+            </td>
+            <td>
+              {{pcn['12NC']}}
+            </td>
+            <td>
+              {{pcn.lastTimeBuyDate}}
+            </td>
+            <td>
+              {{pcn.lastTimeDeliveryDate}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </uib-accordion>
+</div>

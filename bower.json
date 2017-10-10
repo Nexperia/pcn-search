@@ -1,0 +1,7 @@
+{
+  "name": "pcn-search",
+  "license": "proprietary",
+  "dependencies": {
+    "bootstrap": "~3.3.7"
+  }
+}

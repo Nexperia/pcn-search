@@ -1,0 +1,14 @@
+{
+  "global": {
+    "config": {
+    }
+  },
+  "env": {
+    "dev": {
+      "config": {
+        "env": "dev",
+        "datahub_base_url": "https://qa.datahub.nexperia.com/nexperia/public-data/"
+      }
+    }
+  }
+}
