@@ -9,7 +9,8 @@ var gulp = require('gulp'),
     buffer = require('vinyl-buffer'),
     plugins = require('gulp-load-plugins')(),
     cachebust = new plugins.cachebust(),
-    argv = require('yargs').default('environment', 'dev').argv;
+    argv = require('yargs').default('environment', 'dev').argv,
+    app = require('./package.json');
 
 var lib_paths = {
     images: [ 'app/images/**' ],
@@ -117,6 +118,13 @@ gulp.task('build', ['clean', 'build-css', 'jshint', 'build-template-cache', 'env
     return gulp.src('./index.html')
         .pipe(cachebust.references())
         .pipe(gulp.dest('./dist'));
+});
+
+// creates build zip
+gulp.task('zip', ['build'], function () {
+    return gulp.src('./dist/**')
+        .pipe(plugins.zip(app.name + '-' + app.version + '-' + argv.environment + '.zip'))
+        .pipe(gulp.dest('./build'));
 });
 
 // watches file system and triggers a build when a modification is detected

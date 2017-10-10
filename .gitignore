@@ -2,6 +2,7 @@ node_modules/
 bower_components/
 tmp/
 dist/
+build/
 .idea
 *.iml
 *.zip

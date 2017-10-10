@@ -9,6 +9,12 @@
         "env": "dev",
         "datahub_base_url": "https://qa.datahub.nexperia.com/nexperia/public-data/"
       }
+    },
+    "test": {
+      "config": {
+        "env": "test",
+        "datahub_base_url": "https://qa.datahub.nexperia.com/nexperia/public-data/"
+      }
     }
   }
 }
